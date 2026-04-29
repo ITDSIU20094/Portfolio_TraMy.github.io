@@ -1,226 +1,285 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trà My</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Giới thiệu thành viên</title>
 
-        .container {
-            display: flex;
-            height: 100vh;
-        }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-        /* LEFT SIDE */
-        .left {
-            width: 50%;
-            background-color: aliceblue;
-            color: black;
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
 
-        /* CONTENT */
-        .intro {
-            margin-top: 1px;
-        }
+body{
+    background: linear-gradient(135deg, #2c3e50, #4ca1af);
+}
 
-        .intro h1 {
-            font-family: 'Dancing Script', cursive;
-            font-size: 60px;
-            line-height: 1.1;
-            margin: 10px 0;
-        }
+/* TITLE */
+.title{
+    width: 90%;
+    margin: 20px auto;
+    padding: 15px;
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    background: pink;
+    border-radius: 20px;
+    border: 2px solid white;
+    color: black;
+}
 
-        .intro h3{
-            font-family: 'Dancing Script', cursive;
-            font-size: 40px;
-            color: black;
-        }
+/* CONTAINER */
+.container{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
 
-        .info {
-            margin-top: 20px;
-        }
+/* CARD */
+.card{
+    width: 260px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 20px;
+    padding: 22px;
+    color: white;
+    border: 3px solid white;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    transition: 0.3s;
+    line-height: 1.3; 
+}
 
-        .info p {
-            font-family: 'Dancing Script', cursive;
-            font-size: 25px;
-            margin: 5px 0;
-        }
+.card:hover{
+    transform: translateY(-8px) scale(1.03);
+}
 
-        .social {
-            margin-top: 10px;
-        }
+/* AVATAR */
+.card img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 12px;
+    border: 4px solid white;
+    object-fit: cover;
+}
 
-        .social a {
-            font-family: 'Dancing Script', cursive;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px; 
-            text-decoration: none;
-            color: black;
-            margin-right: 15px;
-            font-size: 18px;
-        }
+/* NAME */
+.card h3{
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 12px;
+}
 
-        .social a i {
-            font-size: 25px;
-        }
+/* FACEBOOK */
+.fb-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    background: white;
+    color: #1877f2;
+    padding: 6px 12px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0 auto 12px;
+    width: fit-content;
+}
 
-        .social a:hover {
-            color: #0f5c5c;
-        }
+.fb-link:hover{
+    background: #1877f2;
+    color: white;
+}
 
-        .content {
-            margin-top: 10px;
-        }
-        .content h3 {
-            font-family: 'Dancing Script', cursive;
-            margin-top: 20px;
-            font-size: 25px;
-        }
+/* LABEL */
+.label{
+    font-weight: bold;
+    font-size: 15px;
+    display: inline;
+    color: black
+}
 
-        .content ul {
-            font-family: 'Dancing Script', cursive;
-            margin-top: 10px;
-            padding-left: 20px;
-        }
+/* TEXT */
+.card p{
+    font-size: 14px;
+    margin: 6px 0;
+}
 
-        .content li {
-            font-family: 'Dancing Script', cursive;
-            margin-bottom: 5px;
-        }
-        /* RIGHT SIDE */
-        .right {
-            width: 50%;
-        }
+.card ul{
+    margin: 6px 0 12px 20px;
+}
 
-        .right img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: top;
-        }
+.card li{
+    margin-bottom: 5px; /* 🔥 giãn giữa từng dòng list */
+    font-size: 14px;
+}
 
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column-reverse;
-                height: auto;
-                min-height: 100vh;
-            }
-
-            .left,
-            .right {
-                width: 100%;
-            }
-
-            .right {
-                height: 45vh;
-            }
-
-            .left {
-                padding: 24px 20px 32px;
-            }
-
-            .intro {
-                margin-top: 0;
-            }
-
-            .intro h1 {
-                font-size: 42px;
-            }
-
-            .intro h3 {
-                font-size: 32px;
-            }
-
-            .info p {
-                font-size: 20px;
-            }
-
-            .social {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 12px;
-            }
-
-            .social a {
-                margin-right: 0;
-                font-size: 16px;
-            }
-        }
-
-    </style>        
+/* RESPONSIVE */
+@media(max-width:768px){
+    .container{
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .card{
+        width: 90%;
+        max-width: 320px;
+    }
+    
+    .title{
+        font-size: 22px;
+    }
+}
+</style>
 </head>
+
 <body>
-    <div class="container">
 
-        <!-- LEFT SIDE -->
-        <div class="left">
+<div class="title">GIỚI THIỆU THÀNH VIÊN</div>
 
-            <div class="intro">
-                 <h1>Phùng Thị Trà My</h1>
-                 <h3>Lớp 12A5</h3>
-            </div>
+<div class="container">
 
-            <div class="info">
-                <p><strong>Ngày sinh:</strong> 18/01/2008</p>
-                <p><strong>SĐT:</strong> 0965774129</p>
-                <p><strong>Email:</strong> phungmy1801@gmail.com</p>
-            </div>
+    <!-- CARD 1: Trà My -->
+    <div class="card">
+        <img src="https://sv2.anhsieuviet.com/2026/04/29/TraMy.jpg">
 
-            <div class="social">
-                <a href="https://www.facebook.com/phung.my.10004694?mibextid=wwXIfr&rdid=qXI8LL10avoHwIS0&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1LSVKcx9p4%2F%3Fmibextid%3DwwXIfr#" target="_blank">
-                    <i class="fab fa-facebook"></i> Facebook
-                </a>
+        <h3>Phùng Thị Trà My</h3>
 
-                <a href="https://www.instagram.com/tb_my_tt" target="_blank">
-                    <i class="fab fa-instagram"></i> Instagram
-                </a>
+        <a href="https://www.facebook.com/phung.my.10004694" target="_blank" class="fb-link">
+            <i class="fab fa-facebook"></i> Trà My
+        </a>
 
-                <a href="https://threads.net/@yourprofile" target="_blank">
-                    <i class="fab fa-threads"></i> Threads
-                </a>          
-            </div>
+        <p><span class="label">Ngày sinh:</span> 18/01/2008</p>
 
-            <div class = "content">
-                <h3>Sở thích</h3>
-                    <ul>
-                        <li>Nghe nhạc, xem phim</li>
-                        <li>Đi du lịch</li>
-                        <li>Trải nghiệm ẩm thực</li>
-                        <li>Chụp ảnh</li>
-                    </ul>
+        <p class="label">Sở thích:</p>
+        <ul>
+            <li>Nghe nhạc, xem phim</li>
+            <li>Du lịch</li>
+            <li>Ẩm thực</li>
+        </ul>
 
-                <h3>Ưu điểm</h3>
-                    <ul>
-                        <li>Siêng năng, chăm chỉ</li>
-                        <li>Hòa đồng, thân thiện</li>
-                        <li>Linh hoạt, sáng tạo</li>
-                        <li>Trung thực, có trách nhiệm</li>
-                    </ul>
+        <p class="label">Ưu điểm:</p>
+        <ul>
+            <li>Chăm chỉ</li>
+            <li>Thân thiện</li>
+            <li>Sáng tạo</li>
+        </ul>
 
-                <h3>Nhược điểm</h3>
-                    <ul>
-                        <li>Phân tâm trong việc học</li>
-                        <li>Thiếu quyết đoán</li>
-                    </ul>
-            </div>
-
-        </div>
-
-        <!-- RIGHT SIDE -->
-        <div class="right">
-             <img src="https://sv2.anhsieuviet.com/2026/04/29/TraMy.jpg" alt="TraMy.jpg" border="0">
-        </div>
+        <p class="label">Nhược điểm:</p>
+        <ul>
+            <li>Thiếu quyết đoán</li>
+            <li>Dễ phân tâm</li>
+        </ul>
     </div>
+
+    <!-- CARD 2: Thành Hưng -->
+    <div class="card">
+        <img src="https://sv2.anhsieuviet.com/2026/04/29/ThanhHung.jpg" alt="ThanhHung.jpg" border="0">
+
+        <h3>Nguyễn Thành Hưng</h3>
+
+        <a href="https://www.facebook.com/share/1B4W5NTmqW/?mibextid=wwXIfr" target="_blank" class="fb-link">
+            <i class="fab fa-facebook"></i> Thành Hưng
+        </a>
+
+        <p><span class="label">Ngày sinh:</span> 08/07/2008</p>
+
+        <p class="label">Sở thích:</p>
+        <ul>
+            <li>Xem phim</li>
+            <li>Du lịch</li>
+            <li>Chơi thể thao</li>
+        </ul>
+
+        <p class="label">Ưu điểm:</p>
+        <ul>
+            <li>Siêng năng, chăm chỉ</li>
+            <li>Có trách nhiệm</li>
+            <li>Làm việc nhóm tốt</li>
+        </ul>
+
+        <p class="label">Nhược điểm:</p>
+        <ul>
+            <li>Chưa tự tin</li>
+            <li>Kinh nghiệm còn hạn chế</li>
+        </ul>
+    </div>
+
+    <!-- CARD 3: Trung Hiếu -->
+    <div class="card">
+        <img src="https://sv2.anhsieuviet.com/2026/04/29/TrungHieu.jpg" alt="TrungHieu.jpg" border="0">
+
+        <h3>Phạm Trung Hiếu</h3>
+
+        <a href="https://www.facebook.com/hieu.pham.527168" target="_blank" class="fb-link">
+            <i class="fab fa-facebook"></i> Trung Hiếu
+        </a>
+
+        <p><span class="label">Ngày sinh:</span> 22/03/2008</p>
+
+        <p class="label">Sở thích:</p>
+        <ul>
+            <li>Chơi game</li>
+            <li>Thể thao</li>
+            <li>Ẩm thực</li>
+            <li>Đọc sách</li>
+        </ul>
+
+        <p class="label">Ưu điểm:</p>
+        <ul>
+            <li>Biết lắng nghe</li>
+            <li>Tinh thần cầu tiến</li>
+            <li>Hòa đồng</li>
+        </ul>
+
+        <p class="label">Nhược điểm:</p>
+        <ul>
+            <li>Dễ phân tâm</li>
+            <li>Quản lý thời gian yếu</li>
+        </ul>
+    </div>
+
+    <!-- CARD 4: Kiều Trang -->
+    <div class="card">
+        <img src="https://sv2.anhsieuviet.com/2026/04/29/Trang.jpg" alt="Trang.jpg" border="0">
+
+        <h3>Nguyễn Thị Kiều Trang</h3>
+
+        <a href="https://www.facebook.com/kieu.trang.cute09082008" target="_blank" class="fb-link">
+            <i class="fab fa-facebook"></i> Kiều Trang
+        </a>
+
+        <p><span class="label">Ngày sinh:</span> 09/08/2008</p>
+
+        <p class="label">Sở thích:</p>
+        <ul>
+            <li>Nghe nhạc, xem phim</li>
+            <li>Đọc sách</li>
+            <li>Chụp ảnh</li>
+        </ul>
+
+        <p class="label">Ưu điểm:</p>
+        <ul>
+            <li>Chăm chỉ</li>
+            <li>Thân thiện</li>
+            <li>Trung thực</li>
+        </ul>
+
+        <p class="label">Nhược điểm:</p>
+        <ul>
+            <li>Chưa tự tin</li>
+            <li>Thiếu quyết đoán</li>
+        </ul>
+    </div>
+</div>
 </body>
 </html>
